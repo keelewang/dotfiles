@@ -81,11 +81,10 @@ plugins=(
     nvm
     pip
     python
+    git
     themes
     vi-mode
     ubuntu
-    history
-    per-directory-history
     zsh-syntax-highlighting
     zsh-autosuggestions
 )
