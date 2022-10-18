@@ -181,6 +181,7 @@ autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | execute "
 
 " 主题设置
 colorscheme one
+set background=dark
 let g:lightline = {
       \ 'colorscheme': 'one',
       \ }

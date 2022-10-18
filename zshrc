@@ -8,7 +8,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="fishy"
+ZSH_THEME="kolo"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -47,7 +47,6 @@ ZSH_THEME="fishy"
 # You can also set it to another string to have that shown instead of the default red dots.
 # e.g. COMPLETION_WAITING_DOTS="%F{yellow}waiting...%f"
 # Caution: this setting can cause issues with multiline prompts in zsh < 5.7.1 (see #5765)
-PROMPT='%F{104}> '
 # COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
@@ -95,6 +94,23 @@ source $ZSH/oh-my-zsh.sh
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
+#
+# Proxy
+export http_proxy="192.168.31.195:7890"
+export https_proxy="192.168.31.195:7890"
+
+# User bin
+export PATH="$PATH:/home/haoyu/bin"
+
+# GOPATH
+export PATH="$PATH:/home/haoyu/go/bin"
+
+# Java
+export JAVA_HOME="/opt/software/jdk1.8.0_333"
+export PATH="$PATH:$JAVA_HOME/bin"
+
+# Pip
+export PATH="/home/haoyu/.local/bin:$PATH"
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
