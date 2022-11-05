@@ -1,6 +1,3 @@
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" 通用设置
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let mapleader = ","      " 定义<leader>键
 set nocompatible         " 设置不兼容原始vi模式
 filetype on              " 设置开启文件类型侦测
@@ -84,7 +81,7 @@ if has("gui_running")
     set guioptions-=r           " 隐藏右侧滚动条
     set guioptions-=b           " 隐藏底部滚动条
     set showtabline=0           " 隐藏Tab栏
-    set guicursor=n-v-c:block-Cursor    " 设置光标为竖线
+    set guicursor=n-v-c:ver5    " 设置光标为竖线
 endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -101,16 +98,18 @@ command! -nargs=1 -bar UnPlug call s:deregister(<args>)
 " 插件列表
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 call plug#begin('~/.vim/plugged')
+
 Plug 'chxuan/cpp-mode'
 Plug 'itchyny/lightline.vim'
 Plug 'chxuan/vim-edit'
+Plug 'chxuan/vim-buffer'
 Plug 'chxuan/vimplus-startify'
 Plug 'preservim/tagbar'
+Plug 'Valloric/YouCompleteMe'
 Plug 'Yggdroot/LeaderF'
 Plug 'mileszs/ack.vim'
 Plug 'easymotion/vim-easymotion'
 Plug 'haya14busa/incsearch.vim'
-Plug 'valloric/youcompleteme'
 Plug 'jiangmiao/auto-pairs'
 Plug 'preservim/nerdtree'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
@@ -133,7 +132,6 @@ Plug 'sgur/vim-textobj-parameter'
 Plug 'Shougo/echodoc.vim'
 Plug 'terryma/vim-smooth-scroll'
 Plug 'rhysd/clever-f.vim'
-Plug 'w0rp/ale'
 
 " 加载自定义插件
 if filereadable(expand($HOME . '/.vimrc.custom.plugins'))
@@ -180,11 +178,15 @@ nnoremap <leader><leader>p "+p
 autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | execute "normal! g'\"" | endif
 
 " 主题设置
-colorscheme one
+set background=dark
+let g:onedark_termcolors=256
+
+colorscheme onedark
 set background=dark
 let g:lightline = {
       \ 'colorscheme': 'one',
       \ }
+
 " cpp-mode
 nnoremap <leader>y :CopyCode<cr>
 nnoremap <leader>p :PasteCode<cr>
@@ -195,8 +197,24 @@ nnoremap <leader><leader>if :FormatIf<cr>
 nnoremap <leader><leader>t dd :GenTryCatch<cr>
 xnoremap <leader><leader>t d :GenTryCatch<cr>
 
+" change-colorscheme
+nnoremap <silent> <F9> :PreviousColorScheme<cr>
+inoremap <silent> <F9> <esc> :PreviousColorScheme<cr>
+nnoremap <silent> <F10> :NextColorScheme<cr>
+inoremap <silent> <F10> <esc> :NextColorScheme<cr>
+nnoremap <silent> <F11> :RandomColorScheme<cr>
+inoremap <silent> <F11> <esc> :RandomColorScheme<cr>
+nnoremap <silent> <F12> :ShowColorScheme<cr>
+inoremap <silent> <F12> <esc> :ShowColorScheme<cr>
+
 " prepare-code
 let g:prepare_code_plugin_path = expand($HOME . "/.vim/plugged/prepare-code")
+
+" vim-buffer
+nnoremap <silent> <c-p> :PreviousBuffer<cr>
+nnoremap <silent> <c-n> :NextBuffer<cr>
+nnoremap <silent> <leader>d :CloseBuffer<cr>
+nnoremap <silent> <leader>D :BufOnly<cr>
 
 " vim-edit
 nnoremap Y :CopyText<cr>
@@ -301,29 +319,7 @@ nnoremap <leader>g :GV<cr>
 nnoremap <leader>G :GV!<cr>
 nnoremap <leader>gg :GV?<cr>
 
-" syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-
 " 加载自定义配置
 if filereadable(expand($HOME . '/.vimrc.custom.config'))
     source $HOME/.vimrc.custom.config
-endif
-
-if &term =~ "xterm"
-    let &t_SI = "\<Esc>[1 q"
-    let &t_SR = "\<Esc>[3 q"
-    let &t_EI = "\<Esc>[2 q"
-endif
-
-if exists('$TMUX')
-    let &t_SI .= "\e[1 q"
-    let &t_SR .= "\e[3 q"
-	let &t_EI .= "\e[2 q"
 endif

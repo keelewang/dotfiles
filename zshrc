@@ -105,10 +105,6 @@ export PATH="$PATH:/home/haoyu/bin"
 # GOPATH
 export PATH="$PATH:/home/haoyu/go/bin"
 
-# Java
-export JAVA_HOME="/opt/software/jdk1.8.0_333"
-export PATH="$PATH:$JAVA_HOME/bin"
-
 # Pip
 export PATH="/home/haoyu/.local/bin:$PATH"
 
