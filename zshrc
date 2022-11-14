@@ -94,10 +94,6 @@ source $ZSH/oh-my-zsh.sh
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
-#
-# Proxy
-export http_proxy="192.168.31.195:7890"
-export https_proxy="192.168.31.195:7890"
 
 # User bin
 export PATH="$PATH:/home/haoyu/bin"
@@ -125,7 +121,8 @@ export PATH="/home/haoyu/.local/bin:$PATH"
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
-#
+alias proxy="export http_proxy=http://192.168.31.195:7890 export https_proxy=http://192.168.31.195:7890"
+alias unproxy="unset http_proxy https_proxy"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"

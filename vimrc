@@ -116,6 +116,7 @@ Plug 'sgur/vim-textobj-parameter'
 Plug 'Shougo/echodoc.vim'
 Plug 'terryma/vim-smooth-scroll'
 Plug 'rhysd/clever-f.vim'
+Plug 'skywind3000/vim-rt-format'
 
 " 加载自定义插件
 if filereadable(expand($HOME . '/.vimrc.custom.plugins'))
@@ -168,7 +169,11 @@ let g:lightline = {
       \ 'colorscheme': 'one',
       \ }
 
-" cpp-mode
+"vim-rt-format
+let g:rtf_ctrl_enter = 0
+let g:rtf_on_insert_leave = 1
+
+"cpp-mode
 nnoremap <leader>y :CopyCode<cr>
 nnoremap <leader>p :PasteCode<cr>
 nnoremap <leader>U :GoToFunImpl<cr>
