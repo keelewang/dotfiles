@@ -97,6 +97,7 @@ source $ZSH/oh-my-zsh.sh
 
 # User bin
 export PATH="$PATH:$HOME/bin"
+export PATH="$PATH:$HOME/script"
 
 # GOPATH
 export PATH="$PATH:$HOME/go/bin"
