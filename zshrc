@@ -96,13 +96,13 @@ source $ZSH/oh-my-zsh.sh
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # User bin
-export PATH="$PATH:/home/haoyu/bin"
+export PATH="$PATH:$HOME/bin"
 
 # GOPATH
-export PATH="$PATH:/home/haoyu/go/bin"
+export PATH="$PATH:$HOME/go/bin"
 
 # Pip
-export PATH="/home/haoyu/.local/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -121,12 +121,12 @@ export PATH="/home/haoyu/.local/bin:$PATH"
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
-alias proxy="export http_proxy=http://192.168.31.195:7890 export https_proxy=http://192.168.31.195:7890"
-alias unproxy="unset http_proxy https_proxy"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias wview="wslview"
+alias proxy="export http_proxy=http://192.168.31.195:7890 export https_proxy=http://192.168.31.195:7890"
+alias unproxy="unset http_proxy https_proxy"
 
 bindkey '^F' autosuggest-accept 
 
