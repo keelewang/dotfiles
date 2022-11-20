@@ -83,7 +83,6 @@ command! -nargs=1 -bar UnPlug call s:deregister(<args>)
 " 插件列表
 call plug#begin('~/.vim/plugged')
 
-Plug 'chxuan/cpp-mode'
 Plug 'itchyny/lightline.vim'
 Plug 'chxuan/vim-edit'
 Plug 'chxuan/vim-buffer'
@@ -116,7 +115,6 @@ Plug 'sgur/vim-textobj-parameter'
 Plug 'Shougo/echodoc.vim'
 Plug 'terryma/vim-smooth-scroll'
 Plug 'rhysd/clever-f.vim'
-Plug 'skywind3000/vim-rt-format'
 
 " 加载自定义插件
 if filereadable(expand($HOME . '/.vimrc.custom.plugins'))
@@ -161,40 +159,16 @@ nnoremap <leader><leader>p "+p
 
 " 打开文件自动定位到最后编辑的位置
 autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | execute "normal! g'\"" | endif
-
 " 主题设置
 colorscheme one
-" set background=dark
+"set background=dark
 let g:lightline = {
-      \ 'colorscheme': 'one',
+      \ 'colorscheme':'one',
       \ }
 
 "vim-rt-format
 let g:rtf_ctrl_enter = 0
 let g:rtf_on_insert_leave = 1
-
-"cpp-mode
-nnoremap <leader>y :CopyCode<cr>
-nnoremap <leader>p :PasteCode<cr>
-nnoremap <leader>U :GoToFunImpl<cr>
-nnoremap <silent> <leader>a :Switch<cr>
-nnoremap <leader><leader>fp :FormatFunParam<cr>
-nnoremap <leader><leader>if :FormatIf<cr>
-nnoremap <leader><leader>t dd :GenTryCatch<cr>
-xnoremap <leader><leader>t d :GenTryCatch<cr>
-
-" change-colorscheme
-nnoremap <silent> <F9> :PreviousColorScheme<cr>
-inoremap <silent> <F9> <esc> :PreviousColorScheme<cr>
-nnoremap <silent> <F10> :NextColorScheme<cr>
-inoremap <silent> <F10> <esc> :NextColorScheme<cr>
-nnoremap <silent> <F11> :RandomColorScheme<cr>
-inoremap <silent> <F11> <esc> :RandomColorScheme<cr>
-nnoremap <silent> <F12> :ShowColorScheme<cr>
-inoremap <silent> <F12> <esc> :ShowColorScheme<cr>
-
-" prepare-code
-let g:prepare_code_plugin_path = expand($HOME . "/.vim/plugged/prepare-code")
 
 " vim-buffer
 nnoremap <silent> <c-p> :PreviousBuffer<cr>
@@ -242,8 +216,7 @@ let g:ycm_semantic_triggers =  {
             \   'erlang' : [':'],
             \ }
 nnoremap <leader>u :YcmCompleter GoToDeclaration<cr>
-" 已经使用cpp-mode插件提供的转到函数实现的功能
-" nnoremap <leader>i :YcmCompleter GoToDefinition<cr> 
+nnoremap <leader>i :YcmCompleter GoToDefinition<cr> 
 nnoremap <leader>o :YcmCompleter GoToInclude<cr>
 nnoremap <leader>ff :YcmCompleter FixIt<cr>
 nmap <F5> :YcmDiags<cr>
