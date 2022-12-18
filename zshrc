@@ -74,16 +74,9 @@ plugins=(
     colored-man-pages
     colorize
     sudo
-    command-not-found
-    cp
     tmux
-    npm
-    nvm
-    pip
-    python
     git
     themes
-    vi-mode
     ubuntu
     zsh-syntax-highlighting
     zsh-autosuggestions
@@ -126,7 +119,7 @@ export PATH="$HOME/.local/bin:$PATH"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias wview="wslview"
-alias proxy="export http_proxy=http://192.168.31.195:7890 export https_proxy=http://192.168.31.195:7890"
+alias proxy="export http_proxy=http://192.168.31.218:7890 export https_proxy=http://192.168.31.218:7890"
 alias unproxy="unset http_proxy https_proxy"
 
 bindkey '^F' autosuggest-accept 
@@ -147,3 +140,7 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
