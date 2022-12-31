@@ -86,17 +86,12 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-# export MANPATH="/usr/local/man:$MANPATH"
-
 # User bin
 export PATH="$PATH:$HOME/bin"
 export PATH="$PATH:$HOME/script"
 
 # GOPATH
 export PATH="$PATH:$HOME/go/bin"
-
-# Pip
-export PATH="$HOME/.local/bin:$PATH"
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -119,27 +114,10 @@ export PATH="$HOME/.local/bin:$PATH"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias wview="wslview"
-alias proxy="export http_proxy=http://192.168.31.218:7890 export https_proxy=http://192.168.31.218:7890"
+alias proxy="export http_proxy=http://192.168.31.247:7890 export https_proxy=http://192.168.31.247:7890"
 alias unproxy="unset http_proxy https_proxy"
 
 bindkey '^F' autosuggest-accept 
-
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/haoyu/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/haoyu/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/haoyu/miniconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/haoyu/miniconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
