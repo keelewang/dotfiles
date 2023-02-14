@@ -159,9 +159,10 @@ nnoremap <leader><leader>p "+p
 
 " 打开文件自动定位到最后编辑的位置
 autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | execute "normal! g'\"" | endif
+
 " 主题设置
-colorscheme one
 "set background=dark
+colorscheme one
 let g:lightline = {
       \ 'colorscheme':'one',
       \ }
