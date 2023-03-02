@@ -94,9 +94,6 @@ export PATH=$PATH:$M2_home/bin
 # User bin
 export PATH=$PATH:$HOME/.local/bin
 
-# GOPATH
-#export PATH=$PATH:/usr/local/go/bin
-
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
