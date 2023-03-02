@@ -76,8 +76,9 @@ plugins=(
     sudo
     tmux
     git
+    dnf
     themes
-    ubuntu
+    systemd
     zsh-syntax-highlighting
     zsh-autosuggestions
 )
@@ -85,13 +86,16 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
+export JAVA_HOME=/usr/lib/jvm/jdk-17-oracle-x64
+export M2_home=/opt/maven
+export PATH=$PATH:$JAVA_HOME/bin
+export PATH=$PATH:$M2_home/bin
 
 # User bin
-export PATH="$PATH:$HOME/bin"
-export PATH="$PATH:$HOME/script"
+export PATH=$PATH:$HOME/.local/bin
 
 # GOPATH
-export PATH="$PATH:$HOME/go/bin"
+#export PATH=$PATH:/usr/local/go/bin
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -113,12 +117,5 @@ export PATH="$PATH:$HOME/go/bin"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias wview="wslview"
-alias proxy="export http_proxy=http://192.168.31.247:7890 export https_proxy=http://192.168.31.247:7890"
-alias unproxy="unset http_proxy https_proxy"
 
 bindkey '^F' autosuggest-accept 
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
