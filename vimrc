@@ -1,3 +1,4 @@
+" 通用设置
 let mapleader = ","      " 定义<leader>键
 set nocompatible         " 设置不兼容原始vi模式
 filetype on              " 设置开启文件类型侦测
@@ -82,7 +83,6 @@ command! -nargs=1 -bar UnPlug call s:deregister(<args>)
 
 " 插件列表
 call plug#begin('~/.vim/plugged')
-
 Plug 'itchyny/lightline.vim'
 Plug 'chxuan/vim-edit'
 Plug 'chxuan/vim-buffer'
@@ -167,6 +167,7 @@ colorscheme one
 let g:lightline = {
       \ 'colorscheme':'one',
       \ }
+
 
 "vim-rt-format
 let g:rtf_ctrl_enter = 0
