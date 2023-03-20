@@ -3,8 +3,8 @@ if status is-interactive
 end
 
 # set proxy
-set -gx http_proxy localhost:7890
-set -gx https_proxy localhost:7890
+set -gx http_proxy localhost:7891
+set -gx https_proxy localhost:7891
 
 # tweak fish_escape_delay_ms
 set -g fish_escape_delay_ms 300
