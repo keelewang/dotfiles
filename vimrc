@@ -83,6 +83,7 @@ command! -nargs=1 -bar UnPlug call s:deregister(<args>)
 
 " 插件列表
 call plug#begin('~/.vim/plugged')
+
 Plug 'itchyny/lightline.vim'
 Plug 'chxuan/vim-edit'
 Plug 'chxuan/vim-buffer'
