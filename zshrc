@@ -1,32 +1,49 @@
-export PATH=$PATH:$HOME/go/bin
-
-export JAVA_HOME=/usr/lib/jvm/jdk-17-oracle-x64
-export PATH=$PATH:$JAVA_HOME/bin
-
-export M2_home=/opt/maven
-export PATH=$PATH:$M2_home/bin
-
-export PATH=$PATH:/usr/local/texlive/2022/bin/x86_64-linux
-
-export PATH=$PATH:$HOME/.local/bin
-
 export ZSH="$HOME/.oh-my-zsh"
 
 ZSH_THEME="kolo"
 
 plugins=(
-    colored-man-pages
-    colorize
-    sudo
-    tmux
-    git
-    dnf
-    themes
-    systemd
-    zsh-syntax-highlighting
-    zsh-autosuggestions
-)
+         colored-man-pages
+         git
+         sudo
+         tmux
+         z
+         zsh-autosuggestions
+         zsh-syntax-highlighting
+    )
 
 source $ZSH/oh-my-zsh.sh
 
-bindkey '^F' autosuggest-accept 
+alias cat="ccat"
+
+export HOMEBREW_NO_INSTALL_CLEANUP=true
+
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
+
+# Maven
+export PATH="$HOME/Maven/bin:$PATH"
+
+# llvm
+export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
+# export LDFLAGS="-L/opt/homebrew/opt/llvm/lib"
+# export CPPFLAGS="-I/opt/homebrew/opt/llvm/include"
+
+# proxy
+export https_proxy=http://127.0.0.1:7890 http_proxy=http://127.0.0.1:7890 all_proxy=socks5://127.0.0.1:7890
+
+# nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# PROMPT
+PROMPT='%B%F{magenta}%c%B%F{green}${vcs_info_msg_0_}%B%F{magenta} %{$reset_color%}> '
+
+# GHCup
+[ -f "/Users/haoyu/.ghcup/env" ] && source "/Users/haoyu/.ghcup/env" # ghcup-env
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+

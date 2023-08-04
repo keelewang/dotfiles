@@ -1,5 +1,5 @@
 [user]
-    name = NullCoke
+    name = nullcoke
     email = nullcoke@gmail.com
 
 [core]
@@ -24,4 +24,4 @@
     defaultBranch = main
 
 [credential]
-	helper = store
+	  helper = store
