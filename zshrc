@@ -29,6 +29,7 @@ alias cat="ccat"
 
 export LC_ALL=en_US.UTF-8
 
+export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.ustc.edu.cn/brew.git"
 export HOMEBREW_NO_INSTALL_CLEANUP=true
 
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
