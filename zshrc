@@ -77,5 +77,5 @@ alias python="python3"
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
-# p10k configure
+# p10k configuration
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
