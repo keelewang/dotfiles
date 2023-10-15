@@ -8,6 +8,7 @@ Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
 Plug 'itchyny/lightline.vim'
 Plug 'rakr/vim-one'
 Plug 'Valloric/YouCompleteMe'
+Plug 'jiangmiao/auto-pairs'
 
 call plug#end()
 
@@ -229,3 +230,12 @@ endfunction
            \ 'c,cpp,python,java,go,erlang,perl': ['re!\w{2}'],
                        \ 'cs,lua,javascript': ['re!\w{2}'],
                                    \ }
+
+" Nerd Tree
+let g:NERDTreeWinPos = "right"
+let NERDTreeShowHidden=0
+let NERDTreeIgnore = ['\.pyc$', '__pycache__']
+let g:NERDTreeWinSize=35
+map <leader>nn :NERDTreeToggle<cr>
+map <leader>nb :NERDTreeFromBookmark<Space>
+map <leader>nf :NERDTreeFind<cr>
