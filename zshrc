@@ -14,7 +14,6 @@ plugins=(
          git
          nvm
          sudo
-         tmux
          z
          zsh-autosuggestions
          zsh-syntax-highlighting
