@@ -1,10 +1,12 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
+# p10k
+
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# zsh
 export ZSH="$HOME/.oh-my-zsh"
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
@@ -37,6 +39,9 @@ export HOMEBREW_NO_INSTALL_CLEANUP=true
 
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+# User bin
+export PATH="$HOME/bin:$PATH"
+
 # Maven
 export PATH="$HOME/Maven/bin:$PATH"
 
@@ -57,8 +62,7 @@ export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
 # PROMPT
 PROMPT='%B%F{magenta}%c%B%F{green}${vcs_info_msg_0_}%B%F{magenta} %{$reset_color%}> '
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
+# conda
 __conda_setup="$('/Users/kele/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
@@ -70,11 +74,8 @@ else
     fi
 fi
 unset __conda_setup
-# <<< conda initialize <<<
 
 alias python="python3"
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
-# p10k configuration
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
