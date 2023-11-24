@@ -1,5 +1,4 @@
 # p10k
-
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
@@ -44,19 +43,21 @@ export PATH="$HOME/bin:$PATH"
 # Maven
 export PATH="$HOME/Maven/bin:$PATH"
 
-# llvm
-export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
-# export LDFLAGS="-L/opt/homebrew/opt/llvm/lib"
-# export CPPFLAGS="-I/opt/homebrew/opt/llvm/include"
+alias python="python3"
+alias pn="pnpm"
+
 
 # GHCup
 [ -f "/Users/haoyu/.ghcup/env" ] && source "/Users/haoyu/.ghcup/env" # ghcup-env
 
+
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+
 # PROMPT
 PROMPT='%B%F{magenta}%c%B%F{green}${vcs_info_msg_0_}%B%F{magenta} %{$reset_color%}> '
+
 
 # conda
 __conda_setup="$('/Users/kele/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
@@ -71,14 +72,16 @@ else
 fi
 unset __conda_setup
 
-alias python="python3"
-alias pn="pnpm"
 
+#shell integration
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
+
+# nvm
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
 
 # pnpm
 export PNPM_HOME="/Users/kele/Library/pnpm"
