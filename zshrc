@@ -1,14 +1,5 @@
-# p10k
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
 # zsh
 export ZSH="$HOME/.oh-my-zsh"
-
-ZSH_THEME="powerlevel10k/powerlevel10k"
 
 plugins=(
          colored-man-pages
@@ -18,6 +9,7 @@ plugins=(
          zsh-autosuggestions
          zsh-syntax-highlighting
     )
+
 
 # brew shell completion
 FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
@@ -29,20 +21,28 @@ then
   compinit
 fi
 
+
 source $ZSH/oh-my-zsh.sh
+
 
 export LC_ALL=en_US.UTF-8
 
+
 export HOMEBREW_NO_INSTALL_CLEANUP=true
 
+
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
+
 
 # User bin
 export PATH="$HOME/bin:$PATH"
 
+
 # Maven
 export PATH="$HOME/Maven/bin:$PATH"
 
+
+# alias
 alias python="python3"
 alias pn="pnpm"
 
@@ -73,7 +73,7 @@ fi
 unset __conda_setup
 
 
-#shell integration
+# shell integration
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 
@@ -90,3 +90,7 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+
+
+# Starship
+eval "$(starship init zsh)"
