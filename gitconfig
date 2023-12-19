@@ -3,10 +3,10 @@
     email = keele.wang@gmail.com
 
 [core]
-     editor = vim
+    editor = vim
 
 [color]
-     ui = true
+    ui = true
 
 [alias]
     co = checkout
@@ -24,4 +24,4 @@
     defaultBranch = main
 
 [credential]
-	  helper = store
+    helper = store
