@@ -1,1 +1,1 @@
-# Some dotfiles
+Some dotfiles
