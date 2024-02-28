@@ -74,9 +74,5 @@ esac
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 
-# PROMPT
-PROMPT='%B%F{magenta}%c%B%F{green}${vcs_info_msg_0_}%B%F{magenta} %{$reset_color%}> '
-
-
 # Starship
 eval "$(starship init zsh)"
