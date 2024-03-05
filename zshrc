@@ -47,12 +47,12 @@ alias python="python3"
 alias pn="pnpm"
 
 
-# GHCup
-[ -f "/Users/haoyu/.ghcup/env" ] && source "/Users/haoyu/.ghcup/env" # ghcup-env
-
-
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+
+# ghcup-env
+[ -f "$HOME/.ghcup/env" ] && . "$HOME/.ghcup/env" 
 
 
 # nvm
@@ -62,7 +62,7 @@ export NVM_DIR="$HOME/.nvm"
 
 
 # pnpm
-export PNPM_HOME="/Users/kele/Library/pnpm"
+export PNPM_HOME="$HOME/Library/pnpm"
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
