@@ -43,7 +43,6 @@ export PATH="$HOME/Maven/bin:$PATH"
 
 
 # alias
-alias python="python3"
 alias pn="pnpm"
 
 
