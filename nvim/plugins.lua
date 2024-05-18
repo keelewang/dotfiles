@@ -46,6 +46,15 @@ local plugins = {
       require "custom.configs.conform"
     end,
   },
+  {
+    "f-person/auto-dark-mode.nvim",
+    lazy = false,
+    config = function ()
+      require("auto-dark-mode").setup({
+        update_interval = 1000,
+      })
+    end
+  },
 
   -- To make a plugin not be loaded
   -- {
